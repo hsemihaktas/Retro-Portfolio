@@ -3,9 +3,17 @@ import { ProfileHeader } from "./ProfileHeader";
 import { BioSection } from "./BioSection";
 import { ContactButtons } from "./ContactButtons";
 
-export function Sidebar() {
+interface SidebarProps {
+  hideOnMobile?: boolean;
+}
+
+export function Sidebar({ hideOnMobile = false }: SidebarProps) {
   return (
-    <div className="md:col-span-4 lg:col-span-3 bg-[#f0f0f0] border-b-[4px] md:border-b-0 md:border-r-[4px] border-[#1a1a1a] flex flex-col relative z-20 shrink-0 h-auto md:h-full">
+    <div
+      className={`md:col-span-4 lg:col-span-3 bg-[#f0f0f0] border-b-[4px] md:border-b-0 md:border-r-[4px] border-[#1a1a1a] flex flex-col relative z-20 shrink-0 h-auto md:h-full ${
+        hideOnMobile ? "hidden md:flex" : ""
+      }`}
+    >
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none"

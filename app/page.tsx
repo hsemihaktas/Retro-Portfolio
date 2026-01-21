@@ -35,7 +35,7 @@ export default function Home() {
       {/* MAIN CARD CONTAINER */}
       <div className="w-full max-w-[1600px] bg-white border-y-[4px] md:border-[4px] border-[#1a1a1a] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.2)] md:h-full md:grid md:grid-cols-12 relative flex flex-col md:overflow-hidden transition-all duration-300">
         {/* === LEFT COLUMN: FIXED DASHBOARD (Sidebar) === */}
-        <Sidebar />
+        <Sidebar hideOnMobile={!!selectedProject} />
 
         {/* === RIGHT COLUMN: DYNAMIC CONTENT === */}
         <div className="md:col-span-8 lg:col-span-9 bg-[#f8f8f8] flex flex-col relative z-10 md:overflow-hidden h-full">
