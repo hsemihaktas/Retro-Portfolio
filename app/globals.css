@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
+/* ===== CSS VARIABLES ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-paper: #f2f2f2;
+  --ink-black: #050505;
+  --neon-yellow: #ccff00;
+  --background: #d4d4d4;
+  --foreground: #1a1a1a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-work-sans);
+  --font-mono: var(--font-space-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ===== BASE STYLES ===== */
+body {
+  font-family: var(--font-space-mono), monospace;
+  background-color: var(--bg-paper);
+  color: var(--ink-black);
+  background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.font-display {
+  font-family: var(--font-work-sans), sans-serif;
+}
+
+/* ===== NOISE OVERLAY ===== */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ===== HARD SHADOW UTILITY ===== */
+.hard-shadow {
+  box-shadow: 6px 6px 0px 0px var(--ink-black);
+  border: 3px solid var(--ink-black);
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hard-shadow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px var(--ink-black);
+}
+.hard-shadow:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--ink-black);
+}
+
+/* ===== MARQUEE ANIMATION ===== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* ===== FADE IN ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-left: 3px solid black;
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background-color: black;
+  color: var(--neon-yellow);
 }
