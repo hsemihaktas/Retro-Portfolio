@@ -5,9 +5,10 @@ export function ContactButtons() {
     <div className="p-5 md:p-8 mt-auto shrink-0 bg-[#f0f0f0] relative">
       <div className="flex flex-row items-center justify-between gap-3">
         <div className="flex gap-2 shrink-0">
+          {/* GitHub - Black */}
           <a
             href="#"
-            className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center border-[2px] border-[#1a1a1a] bg-white hover:bg-[#1a1a1a] hover:text-white transition-all hover:-translate-y-0.5 group shadow-[2px_2px_0px_rgba(0,0,0,0.1)]"
+            className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center border-[2px] border-[#1a1a1a] bg-white hover:bg-[#1a1a1a] hover:text-white transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] group shadow-[2px_2px_0px_black]"
             title="GitHub"
           >
             <Github
@@ -15,9 +16,10 @@ export function ContactButtons() {
               className="group-hover:scale-110 transition-transform md:w-[18px] md:h-[18px]"
             />
           </a>
+          {/* LinkedIn - Blue */}
           <a
             href="#"
-            className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center border-[2px] border-[#1a1a1a] bg-white hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all hover:-translate-y-0.5 group shadow-[2px_2px_0px_rgba(0,0,0,0.1)]"
+            className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center border-[2px] border-[#1a1a1a] bg-white hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_#005885] group shadow-[2px_2px_0px_black]"
             title="LinkedIn"
           >
             <Linkedin
@@ -25,9 +27,10 @@ export function ContactButtons() {
               className="group-hover:scale-110 transition-transform md:w-[18px] md:h-[18px]"
             />
           </a>
+          {/* X/Twitter - Black */}
           <a
             href="#"
-            className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center border-[2px] border-[#1a1a1a] bg-white hover:bg-black hover:text-white hover:border-black transition-all hover:-translate-y-0.5 group shadow-[2px_2px_0px_rgba(0,0,0,0.1)]"
+            className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center border-[2px] border-[#1a1a1a] bg-white hover:bg-black hover:text-white transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] group shadow-[2px_2px_0px_black]"
             title="X (Twitter)"
           >
             <svg
@@ -39,9 +42,10 @@ export function ContactButtons() {
             </svg>
           </a>
         </div>
+        {/* Contact - Neon Yellow */}
         <a
           href="mailto:me@rewound.dev"
-          className="flex-1 h-9 md:h-10 flex items-center justify-center gap-2 border-[2px] border-[#1a1a1a] bg-[#ccff00] hover:brightness-105 transition-all shadow-[2px_2px_0px_black] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px]"
+          className="flex-1 h-9 md:h-10 flex items-center justify-center gap-2 border-[2px] border-[#1a1a1a] bg-[#ccff00] hover:brightness-110 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] shadow-[2px_2px_0px_black]"
         >
           <Mail size={14} />
           <span className="font-black text-[10px] tracking-widest uppercase">
