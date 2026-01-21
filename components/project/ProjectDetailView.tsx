@@ -5,6 +5,7 @@ import {
   Smartphone,
   Monitor,
   Layers,
+  Download,
 } from "lucide-react";
 import { Project } from "@/types";
 import { WebFrame } from "./WebFrame";
@@ -20,6 +21,12 @@ export function ProjectDetailView({ project, onBack }: ProjectDetailViewProps) {
     "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop";
   const defaultMobileImage =
     "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1000&auto=format&fit=crop";
+
+  // Check if project has any links
+  const hasWebLinks = project.links?.demo || project.links?.github;
+  const hasMobileLinks =
+    project.links?.appStore || project.links?.playStore || project.links?.store;
+  const hasAnyLinks = project.type === "web" ? hasWebLinks : hasMobileLinks;
 
   return (
     <div className="flex flex-col h-full bg-white relative animate-[fadeInUp_0.3s_ease-out]">
@@ -126,7 +133,7 @@ export function ProjectDetailView({ project, onBack }: ProjectDetailViewProps) {
             </div>
           </div>
 
-          {/* Right: Tech Stack & Meta */}
+          {/* Right: Tech Stack & Links */}
           <div className="space-y-8">
             <div>
               <h3 className="font-display font-black text-xl uppercase mb-4">
@@ -144,33 +151,77 @@ export function ProjectDetailView({ project, onBack }: ProjectDetailViewProps) {
               </div>
             </div>
 
-            <div>
-              <h3 className="font-display font-black text-xl uppercase mb-4">
-                Links
-              </h3>
-              <div className="flex flex-col gap-3">
-                {project.links?.demo && (
-                  <a
-                    href={project.links.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full bg-black text-white h-12 flex items-center justify-center gap-2 font-bold uppercase hover:bg-[#ccff00] hover:text-black transition-all border-[3px] border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] text-sm"
-                  >
-                    <Globe size={16} /> Live Demo
-                  </a>
-                )}
-                {project.links?.github && (
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full bg-white text-black h-12 flex items-center justify-center gap-2 font-bold uppercase hover:bg-gray-50 transition-all border-[3px] border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] text-sm"
-                  >
-                    <Github size={16} /> Source Code
-                  </a>
-                )}
+            {/* Links - Only show if there are links */}
+            {hasAnyLinks && (
+              <div>
+                <h3 className="font-display font-black text-xl uppercase mb-4">
+                  Links
+                </h3>
+                <div className="flex flex-col gap-3">
+                  {/* WEB LINKS */}
+                  {project.type === "web" && (
+                    <>
+                      {project.links?.demo && (
+                        <a
+                          href={project.links.demo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="w-full bg-white text-black h-12 flex items-center justify-center gap-2 font-bold uppercase hover:bg-gray-100 transition-all border-[3px] border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] text-sm"
+                        >
+                          <Globe size={16} /> Live Demo
+                        </a>
+                      )}
+                      {project.links?.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="w-full bg-white text-black h-12 flex items-center justify-center gap-2 font-bold uppercase hover:bg-gray-100 transition-all border-[3px] border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] text-sm"
+                        >
+                          <Github size={16} /> Source Code
+                        </a>
+                      )}
+                    </>
+                  )}
+
+                  {/* MOBILE LINKS */}
+                  {project.type === "mobile" && (
+                    <>
+                      {project.links?.appStore && (
+                        <a
+                          href={project.links.appStore}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="w-full bg-white text-black h-12 flex items-center justify-center gap-2 font-bold uppercase hover:bg-gray-100 transition-all border-[3px] border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] text-sm"
+                        >
+                          <Download size={16} /> App Store
+                        </a>
+                      )}
+                      {project.links?.playStore && (
+                        <a
+                          href={project.links.playStore}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="w-full bg-white text-black h-12 flex items-center justify-center gap-2 font-bold uppercase hover:bg-gray-100 transition-all border-[3px] border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] text-sm"
+                        >
+                          <Download size={16} /> Play Store
+                        </a>
+                      )}
+                      {project.links?.store && (
+                        <a
+                          href={project.links.store}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="w-full bg-white text-black h-12 flex items-center justify-center gap-2 font-bold uppercase hover:bg-gray-100 transition-all border-[3px] border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_black] text-sm"
+                        >
+                          <Download size={16} /> Download
+                        </a>
+                      )}
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

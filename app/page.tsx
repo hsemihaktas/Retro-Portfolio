@@ -5,7 +5,6 @@ import { Project } from "@/types";
 import { PROJECTS } from "@/lib/data/projects";
 
 // Layout Components
-import { SystemLabels } from "@/components/layout/SystemLabels";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 
 // Common Components
@@ -33,9 +32,6 @@ export default function Home() {
 
   return (
     <div className="w-full min-h-screen md:h-screen md:overflow-hidden flex items-center justify-center p-0 md:p-6 lg:p-8 bg-[#d4d4d4] relative">
-      {/* DECORATIVE SYSTEM LABELS (Desktop Only) */}
-      <SystemLabels />
-
       {/* MAIN CARD CONTAINER */}
       <div className="w-full max-w-[1600px] bg-white border-y-[4px] md:border-[4px] border-[#1a1a1a] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.2)] md:h-full md:grid md:grid-cols-12 relative flex flex-col md:overflow-hidden transition-all duration-300">
         {/* === LEFT COLUMN: FIXED DASHBOARD (Sidebar) === */}

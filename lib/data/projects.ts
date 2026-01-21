@@ -13,7 +13,11 @@ export const PROJECTS: Project[] = [
     status: "Released",
     image:
       "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop",
-    links: { demo: "#", github: "#" },
+    links: {
+      appStore: "#",
+      playStore: "#",
+      store: "#",
+    },
   },
   {
     id: "2",
@@ -27,7 +31,10 @@ export const PROJECTS: Project[] = [
     status: "In Dev",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
-    links: { demo: "#", github: "#" },
+    links: {
+      demo: "#",
+      github: "#",
+    },
   },
   {
     id: "3",
@@ -40,7 +47,9 @@ export const PROJECTS: Project[] = [
     status: "Prototype",
     image:
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop",
-    links: { github: "#" },
+    links: {
+      github: "#",
+    },
   },
   {
     id: "4",
@@ -53,6 +62,9 @@ export const PROJECTS: Project[] = [
     status: "Released",
     image:
       "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2606&auto=format&fit=crop",
-    links: { demo: "#", github: "#" },
+    links: {
+      appStore: "#",
+      playStore: "#",
+    },
   },
 ];

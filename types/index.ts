@@ -8,8 +8,13 @@ export interface Project {
   type: "mobile" | "web";
   image?: string;
   links?: {
+    // Web links
     demo?: string;
     github?: string;
+    // Mobile links
+    appStore?: string;
+    playStore?: string;
+    store?: string; // Deeplink for custom store/download page
   };
 }
 
