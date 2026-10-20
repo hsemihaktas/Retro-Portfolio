@@ -10,7 +10,7 @@ interface SidebarProps {
 export function Sidebar({ hideOnMobile = false }: SidebarProps) {
   return (
     <div
-      className={`md:col-span-4 lg:col-span-3 bg-[#f0f0f0] border-b-[4px] md:border-b-0 md:border-r-[4px] border-[#1a1a1a] flex flex-col relative z-20 shrink-0 h-auto md:h-full ${
+      className={`md:col-span-4 lg:col-span-4 xl:col-span-3 min-w-0 bg-[#f0f0f0] border-b-[4px] md:border-b-0 md:border-r-[4px] border-[#1a1a1a] flex flex-col relative z-20 shrink-0 h-auto md:h-full ${
         hideOnMobile ? "hidden md:flex" : ""
       }`}
     >
@@ -25,7 +25,7 @@ export function Sidebar({ hideOnMobile = false }: SidebarProps) {
       />
 
       {/* Top Section: Photo & ID */}
-      <div className="p-5 md:p-8 md:pb-4 flex flex-col items-center shrink-0">
+      <div className="p-5 md:p-6 lg:p-6 xl:p-8 md:pb-4 flex flex-col items-center shrink-0 w-full">
         <AvatarCard />
         <ProfileHeader />
       </div>

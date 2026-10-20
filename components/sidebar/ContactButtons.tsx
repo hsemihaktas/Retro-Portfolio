@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export function ContactButtons() {
   return (
-    <div className="p-5 md:p-8 mt-auto shrink-0 bg-[#f0f0f0] relative">
+    <div className="p-5 md:p-6 xl:p-8 mt-auto shrink-0 bg-[#f0f0f0] relative">
       <div className="flex flex-row items-center justify-between gap-3">
         <div className="flex gap-2 shrink-0">
           {/* GitHub - Black */}

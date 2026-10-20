@@ -38,7 +38,7 @@ export default function Home() {
         <Sidebar hideOnMobile={!!selectedProject} />
 
         {/* === RIGHT COLUMN: DYNAMIC CONTENT === */}
-        <div className="md:col-span-8 lg:col-span-9 bg-[#f8f8f8] flex flex-col relative z-10 md:overflow-hidden h-full">
+        <div className="md:col-span-8 lg:col-span-8 xl:col-span-9 min-w-0 bg-[#f8f8f8] flex flex-col relative z-10 md:overflow-hidden h-full">
           {selectedProject ? (
             // VIEW B: PROJECT DETAILS
             <ProjectDetailView

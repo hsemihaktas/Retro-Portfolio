@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function AvatarCard() {
   return (
-    <div className="w-24 h-24 md:w-40 md:h-40 lg:w-52 lg:h-52 aspect-square border-[3px] border-[#1a1a1a] bg-white p-1.5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative mb-5 md:mb-8 group">
+    <div className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 xl:w-52 xl:h-52 aspect-square border-[3px] border-[#1a1a1a] bg-white p-1.5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative mb-4 md:mb-6 xl:mb-8 group shrink-0">
       <div className="w-full h-full border border-[#1a1a1a] overflow-hidden grayscale contrast-125 relative">
         <Image
           src="https://api.dicebear.com/9.x/notionists/svg?seed=Alex&backgroundColor=e5e5e5&scale=120&flip=true"
